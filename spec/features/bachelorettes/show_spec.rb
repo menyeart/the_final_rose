@@ -22,5 +22,17 @@ RSpec.describe "Bachelorette Show Page", type: :feature do
       expect(page).to have_content("merry")
       expect(page).to have_content("sunita")
     end
+
+    it "When I visit a bachelorette show page I see the average age of all of that bachelorette's contestants" do
+      lauren = Bachelorette.create(name: "Lauren", season_number: 1)
+
+      rachel = Contestant.create(name: "rachel", age: 20, hometown: "Los Angeles", bachelorette_id: lauren.id)
+      merry = Contestant.create(name: "merry", age: 30, hometown: "Des Moines", bachelorette_id: lauren.id)
+      sunita = Contestant.create(name: "sunita", age: 40, hometown: "Mumbai", bachelorette_id: lauren.id)
+
+      visit bachelorette_path(lauren.id)
+      
+      expect(page).to have_content("Average Age of Contestants: 30")
+    end
   end
 end
