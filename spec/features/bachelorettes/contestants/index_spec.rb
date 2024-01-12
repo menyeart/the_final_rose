@@ -20,6 +20,10 @@ RSpec.describe "Bachelorette Contestants Index Page", type: :feature do
       expect(page).to have_content(sunita.name)
       expect(page).to have_content(sunita.hometown)
       expect(page).to have_content(sunita.age)
+
+      click_link("rachel")
+
+      expect(current_path).to eq("/contestants/#{rachel.id}")
     end
   end
 end
