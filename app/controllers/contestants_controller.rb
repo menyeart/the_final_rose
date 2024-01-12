@@ -3,4 +3,7 @@ class ContestantsController < ApplicationController
     @bachelorette = Bachelorette.find(params["bachelorette_id"])
   end
 
+  def show
+  end
+
 end
