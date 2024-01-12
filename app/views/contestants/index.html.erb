@@ -1,7 +1,7 @@
 <h1><%= @bachelorette.name %> Contestants </h1>
 <% @bachelorette.contestants.each do |contestant| %>
 <ul>
-<li> Name: <%= contestant.name %> </li>
+<li> Name: <%= link_to contestant.name, contestant_path(contestant.id) %> </li>
 <li> Hometown: <%= contestant.hometown %> </li>
 <li> Age: <%= contestant.age %> </li>
 </ul>
