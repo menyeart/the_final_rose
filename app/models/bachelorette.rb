@@ -1,4 +1,3 @@
 class Bachelorette <ApplicationRecord
-  has_many :contestants
-  
+  has_many :contestants 
 end
